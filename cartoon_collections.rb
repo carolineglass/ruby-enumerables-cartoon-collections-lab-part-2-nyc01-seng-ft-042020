@@ -8,8 +8,8 @@ def summon_captain_planet(planeteer_calls)
   # Use an Enumerable to capitalize and add '!' to every element in the passed in array
   # Return a new array of the results
   results = []
-  planeteer_calls.map do |planeteer_calls|
-    results.push("#{planeteer_calls.capitalize}!")
+  planeteer_calls.map do |element|
+    results.push("#{element.capitalize}!")
   end
     return results
 end
@@ -29,7 +29,9 @@ def find_valid_calls(planeteer_calls)
   new_array = []
   #["Earth!", "Wind!", "Fire!", "Water!", "Heart!"]
   planeteer_calls.map do |element|
-   new_array.push(element) if valid_calls.include?(element)
+     if valid_calls.include?(element)
+       new_array.push(element)
+     end
   end
   return new_array.first
 end
